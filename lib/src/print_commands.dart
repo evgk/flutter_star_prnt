@@ -202,9 +202,10 @@ class PrintCommands {
         child: repaintBoundary,
       ),
       configuration: ViewConfiguration(
-        size: logicalSize,
-        devicePixelRatio: 1.0,
-      ),
+        physicalConstraints: BoxConstraints.tight(logicalSize) * (View.of(context).devicePixelRatio ?? 1.0),
+        logicalConstraints: BoxConstraints.tight(logicalSize),
+        devicePixelRatio: View.of(context).devicePixelRatio ?? 1.0,
+      ),,
     );
 
     final PipelineOwner pipelineOwner = PipelineOwner();
