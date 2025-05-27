@@ -37,6 +37,7 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    namespace 'io.eddayy.flutter_star_prnt'
 }
 
 dependencies {
